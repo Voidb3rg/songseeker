@@ -35,8 +35,10 @@ document.addEventListener('DOMContentLoaded', function () {
             if (hitsterData) {
                 console.log("Hitster data:", hitsterData.id, hitsterData.lang);
                 try {
-                    const csvContent = await getCachedCsv(`https://voidplex.de/songseeker/playlists/hitster-${hitsterData.lang}.csv`);
+                    const csvContent = await getCachedCsv(`/playlists/hitster-${hitsterData.lang}.csv`);
                     const youtubeLink = lookupYoutubeLink(hitsterData.id, csvContent);
+                    console.log(hitsterData.id);
+                    console.log(csvContent);
                     if (youtubeLink) {
                         // Handle YouTube link obtained from the CSV
                         console.log(`YouTube Link from CSV: ${youtubeLink}`);
