@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('headers:' + headers)
         const cardIndex = headers.indexOf('Card#');
         console.log('card#:' + cardIndex);
-        const urlIndex = headers.indexOf('Youtube-URL');
+        const urlIndex = headers.indexOf('URL');
         console.log('Youtube-URL:' + urlIndex);
 
         const targetId = parseInt(id, 10); // Convert the incoming ID to an integer
