@@ -1,5 +1,5 @@
 import QrScanner from "https://unpkg.com/qr-scanner/qr-scanner.min.js";
-
+let version = "250112-20:19"
 let player; // Define player globally
 let playbackTimer; // hold the timer reference
 let playbackDuration = 30; // Default playback duration
