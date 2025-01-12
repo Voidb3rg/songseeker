@@ -74,6 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function isHitsterLink(url) {
         // Regular expression to match with or without "http://" or "https://"
         const regex = /^(?:http:\/\/|https:\/\/)?(www\.hitstergame|app\.hitsternordics)\.com\/.+/;
+        //const regex = /^(www|http:|https:)+[^\s]+[\w]?(hitstergame|app\.hitsternordics)\.com\/.+/gm;
         return regex.test(url);
     }
 
@@ -84,7 +85,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Example implementation for parseHitsterUrl
     function parseHitsterUrl(url) {
-        const regex = /^(?:http:\/\/|https:\/\/)?www\.hitstergame\.com\/(.+?)\/(\d+)$/;
+        const regex = /^(?:http:\/\/|https:\/\/)?(www)\.hitstergame\.com\/(.+?)\/(\d+)$/;
+        //const regex = /^(?:http:\/\/|https:\/\/)?www\.hitstergame\.com\/(.+?)\/(\d+)$/;
         const match = url.match(regex);
         if (match) {
             // Hitster URL is in the format: https://www.hitstergame.com/{lang}/{id}
