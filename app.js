@@ -35,10 +35,8 @@ document.addEventListener('DOMContentLoaded', function () {
             if (hitsterData) {
                 console.log("Hitster data:", hitsterData.id, hitsterData.lang);
                 try {
-                    const csvContent = await getCachedCsv(`/playlists/hitster-${hitsterData.lang}.csv`);
+                    const csvContent = await getCachedCsv(`/songseeker/playlists/hitster-${hitsterData.lang}.csv`);
                     const youtubeLink = lookupYoutubeLink(hitsterData.id, csvContent);
-                    console.log(hitsterData.id);
-                    console.log(csvContent);
                     if (youtubeLink) {
                         // Handle YouTube link obtained from the CSV
                         console.log(`YouTube Link from CSV: ${youtubeLink}`);
@@ -105,12 +103,17 @@ document.addEventListener('DOMContentLoaded', function () {
     // Looks up the YouTube link in the CSV content based on the ID
     function lookupYoutubeLink(id, csvContent) {
         const headers = csvContent[0]; // Get the headers from the CSV content
+        console.log('headers:' + headers)
         const cardIndex = headers.indexOf('Card#');
-        const urlIndex = headers.indexOf('URL');
+        console.log('card#:' + cardIndex);
+        const urlIndex = headers.indexOf('Youtube-URL');
+        console.log('Youtube-URL:' + urlIndex);
 
         const targetId = parseInt(id, 10); // Convert the incoming ID to an integer
         const lines = csvContent.slice(1); // Exclude the first row (headers) from the lines
-
+        console.log('cardIndex:' + cardIndex);
+        console.log('urlIndex:' + urlIndex);
+        console.log('targetId:' + targetId);
         if (cardIndex === -1 || urlIndex === -1) {
             throw new Error('Card# or URL column not found');
         }
