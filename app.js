@@ -1,5 +1,5 @@
 import QrScanner from "https://unpkg.com/qr-scanner/qr-scanner.min.js";
-let version = "250112-20:19"
+let version = "250112-20:31"
 let player; // Define player globally
 let playbackTimer; // hold the timer reference
 let playbackDuration = 30; // Default playback duration
@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.log("Hitster data:", hitsterData.id, hitsterData.lang);
                 try {
                     const csvContent = await getCachedCsv(`/songseeker/playlists/hitster-${hitsterData.lang}.csv`);
+                    console.log('get csv:' + csvContent);
                     const youtubeLink = lookupYoutubeLink(hitsterData.id, csvContent);
                     if (youtubeLink) {
                         // Handle YouTube link obtained from the CSV
