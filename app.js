@@ -7,7 +7,7 @@ let qrScanner;
 let csvCache = {};
 
 document.addEventListener('DOMContentLoaded', function () {
-    alert(version);
+    alert("Version: "+ version);
 
     let lastDecodedText = ""; // Store the last decoded text
 
@@ -107,6 +107,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Looks up the YouTube link in the CSV content based on the ID
     function lookupYoutubeLink(id, csvContent) {
         const headers = csvContent[0]; // Get the headers from the CSV content
+        debugger;
         console.log('headers:' + headers)
         const cardIndex = headers.indexOf('Card#');
         console.log('card#:' + cardIndex);
