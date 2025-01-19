@@ -1,5 +1,5 @@
 import QrScanner from "https://unpkg.com/qr-scanner/qr-scanner.min.js";
-let version = "250112-20:31"
+let version = "250119-21:34";
 let player; // Define player globally
 let playbackTimer; // hold the timer reference
 let playbackDuration = 30; // Default playback duration
@@ -73,8 +73,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function isHitsterLink(url) {
         // Regular expression to match with or without "http://" or "https://"
-        const regex = /^(?:http:\/\/|https:\/\/)?(www\.hitstergame|app\.hitsternordics)\.com\/.+/;
-        //const regex = /^(www|http:|https:)+[^\s]+[\w]?(hitstergame|app\.hitsternordics)\.com\/.+/gm;
+        //const regex = /^(?:http:\/\/|https:\/\/)?(www\.hitstergame|app\.hitsternordics)\.com\/.+/;
+        const regex = /^(?:http:\/\/|https:\/\/)?(www\.)?(hitstergame|app\.hitsternordics)\.com\//;
         return regex.test(url);
     }
 
@@ -85,8 +85,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Example implementation for parseHitsterUrl
     function parseHitsterUrl(url) {
-        const regex = /^(?:http:\/\/|https:\/\/)?(www)\.hitstergame\.com\/(.+?)\/(\d+)$/;
-        //const regex = /^(?:http:\/\/|https:\/\/)?www\.hitstergame\.com\/(.+?)\/(\d+)$/;
+        //const regex = /^(?:http:\/\/|https:\/\/)?(www)\.hitstergame\.com\/(.+?)\/(\d+)$/;
+        const regex = /^(?:http:\/\/|https:\/\/)?(?:www\.)?hitstergame\.com\/(.+?)\/(\d+)$/;
         const match = url.match(regex);
         if (match) {
             // Hitster URL is in the format: https://www.hitstergame.com/{lang}/{id}
