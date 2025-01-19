@@ -1,2 +1,2 @@
-﻿Card#;Title;Artist;Year;URL;Hashed Info;Youtube-Title;ISRC;Hitster-URL;Edition
-1;I Will Always Love You;Whitney Houston;1979;https://www.youtube.com/watch?v=aLe-skz3pbo;8840a51d835814aa95bb74d423db35ddb09de6b6f9493994f5675820afd10831;You Came;DEA340500985;http://www.hitstergame.com/de/aaaa0026/00001;Moviestv
+﻿Card#,Title,Artist,Year,URL,Hashed Info,Youtube-Title,ISRC,Hitster-URL,Edition
+1,I Will Always Love You,Whitney Houston,1979,https://www.youtube.com/watch?v=aLe-skz3pbo,8840a51d835814aa95bb74d423db35ddb09de6b6f9493994f5675820afd10831,You Came,DEA340500985,http://www.hitstergame.com/de/aaaa0026/00001,Moviestv

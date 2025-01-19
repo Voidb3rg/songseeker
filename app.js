@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.log("Hitster data:", hitsterData.id, hitsterData.lang);
                 try {
                     const csvContent = await getCachedCsv(`/songseeker/playlists/hitster-${hitsterData.lang}.csv`);
-                    console.log('get csv:' + csvContent);
+                    console.log('get csv:' + csvContent[0]);
                     const youtubeLink = lookupYoutubeLink(hitsterData.id, csvContent);
                     if (youtubeLink) {
                         // Handle YouTube link obtained from the CSV
