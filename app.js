@@ -1,5 +1,5 @@
 import QrScanner from "https://unpkg.com/qr-scanner/qr-scanner.min.js";
-let version = "250119-21:34";
+let version = "250119-22:34";
 let player; // Define player globally
 let playbackTimer; // hold the timer reference
 let playbackDuration = 30; // Default playback duration
@@ -7,6 +7,7 @@ let qrScanner;
 let csvCache = {};
 
 document.addEventListener('DOMContentLoaded', function () {
+    alert(version);
 
     let lastDecodedText = ""; // Store the last decoded text
 
